@@ -6,8 +6,9 @@ import useSWR from 'swr'
 import LandingLastPost from '../../components/landingComponents/landingLastPost/LandingLastPost'
 import LandingBestPost from '../../components/landingComponents/landingBestPost/LandingBestPost'
 import TypeItComponent from '../../components/landingComponents/typeIt/TypeIt'
-
+import { useNavigate } from 'react-router-dom'
 const LandingPage = () => {
+  const navigate =useNavigate()
   const {data:sliderData,error:sliderError}=useSWR("http://localhost:9000/posts ");
   const {data:lastPostData,error:lastPostError}=useSWR("http://localhost:9000/lastPost ")
   const {data:bestPostData,error:bestPostError}=useSWR("http://localhost:9000/bestPost ")
@@ -27,7 +28,7 @@ const LandingPage = () => {
         <Col xs={12}>
           <div className='d-flex justify-content-between'>
             <h3>bestPost</h3>
-            <buttno className="btn btn-outline-secondary">more</buttno>
+            <button className="btn btn-outline-secondary" onClick={()=>navigate("/bestPost")}>more</button>
           </div>
         </Col>
         <Col xs={12} >
@@ -38,7 +39,7 @@ const LandingPage = () => {
         <Col xs={12}>
           <div className='d-flex justify-content-between'>
             <h3>lastpost</h3>
-            <buttno className="btn btn-outline-secondary">more</buttno>
+            <button className="btn btn-outline-secondary">more</button>
           </div>
         </Col>
         <Col xs={12} >

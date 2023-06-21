@@ -14,6 +14,7 @@ const Navbarcomponets = () => {
       <Nav className="me-auto">
         <Link className="link-light text-decoration-none pt-1" to="/">Home</Link>
         <Link className="link-light text-decoration-none pt-1" to="/bestPost">..................BestPost</Link>
+        <Link className="link-light text-decoration-none pt-1" to="/lastPost">..................  lastPost</Link>
        
       </Nav>
     </Container>
